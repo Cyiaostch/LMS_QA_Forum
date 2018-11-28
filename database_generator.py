@@ -54,12 +54,13 @@ cursor.execute('''CREATE TABLE ThreadPertanyaan (
   Kode_MataKuliah varchar(100) NOT NULL,
   ID varchar(100) NOT NULL,
   Pertanyaan varchar(1000) NOT NULL,
+  Tag varchar(1000) NOT NULL,
   PRIMARY KEY (ID)
 );''')
 
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB001","P001","Berapakah nilai 1 + 1?")''')
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB002","P002","Apakah batu bisa terbang?")''')
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB003","P003","Mengapa fanta warnanya merah?")''')
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB001","P001","Berapakah nilai 1 + 1?","Materi")''')
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB002","P002","Apakah batu bisa terbang?","Materi")''')
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB003","P003","Mengapa fanta warnanya merah?","Materi")''')
 connection.commit()
 
 #create Table Jawaban

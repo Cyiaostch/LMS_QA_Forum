@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>SSO ITB</title>
+  <link rel="stylesheet" href="../smart/css/cas.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="../smart/js/bootstrap.min.css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.1.3.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+  <![endif]-->
+</head>
+
+<body id="cas">
+  <div class="container">
+    <div class="col-lg-4 col-lg-push-8">
+      <div class="main">
+        <header>
+          <div id="logo">
+            <h1>Central Authentication ITB</h1>
+          </div>
+        </header>
+        <div id="content">
+          <div class="box" id="login">
+            <form id="fm1" action="" method="post">
+              <h2>Enter your Username and Password</h2>
+              <section class="row">
+                <!-- <label for="username"><span class="accesskey">U</span>sername:</label> -->
+                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                <input id="username" name="username" class="form-control" tabindex="1" placeholder="Username" accesskey="u" type="text" value="" size="25" autocomplete="off">
+              </section>
+              <section class="row">
+                <!-- <label for="password"><span class="accesskey">P</span>assword:</label> -->
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input id="password" name="password" class="form-control" tabindex="2" placeholder="Password" accesskey="p" type="password" value="" size="25" autocomplete="off">
+              </section>
+              <section class="row check">
+                <input id="warn" name="warn" value="true" tabindex="3" accesskey="l" type="checkbox">
+                <label for="warn"><span class="accesskey">W</span>arn me before logging me into other sites.</label>
+              </section>
+              <section class="row btn-row">
+                <input type="hidden" name="lt" value="LT-95990-isLec6ttGeU2BSk6pxtMJ6dHdZjLan-login.itb.ac.id">
+                <input type="hidden" name="execution" value="e3s1">
+                <input type="hidden" name="_eventId" value="submit">
+                <input class="btn btn-primary" name="submit" accesskey="l" value="LOGIN" tabindex="4" type="submit">
+                <input class="btn btn-warning" name="reset" accesskey="c" value="CLEAR" tabindex="5" type="reset">
+                <br><span class="accesskey" style="display: block; margin-top:10px; text-decoration: none;"><a style="text-decoration: none; color: #777777;" href="https://nic.itb.ac.id/manajemen-akun/reset-password">Lupa password</a><span>
+                  </span></span></section>
+            </form>
+          </div>
+        </div> <!-- END #content -->
+      </div>
+    </div>
+    <div class="col-lg-8 col-lg-pull-4 tright">
+      <ol>
+        <li>
+          <h4>Layanan Login ITB</h4>
+          <p>Layanan Login ITB merupakan aplikasi berbasis SSO (Single Sign On) yang memungkinkan civitas akademika ITB untuk mengakses beberapa aplikasi pendukung kegiatan ITB dengan menggunakan satu akun saja yaitu akun INA (ITB Network Account).</p>
+        </li>
+        <li>
+          <h4>Daftar Akun</h4>
+          <p>Untuk menggunakan Login ITB, anda harus memiliki akun INA terlebih dahulu. Akun INA dapat dimiliki oleh: </p>
+          <ul>
+            <li>Mahasiswa</li>
+            <li>Staf/Dosen yang memiliki NIP</li>
+            <li>Staf/Dosen/Peneliti yang tidak memiliki NIP</li>
+            <li>Tamu</li>
+          </ul>
+          <a href=" http://ditsti.itb.ac.id/registrasi-akun-ina/" target="_blank">Kunjungi http://ditsti.itb.ac.id/registrasi-akun-ina/ untuk mengetahui cara registrasi akun INA.</a>
+          <p></p>
+        </li>
+        <!--<li><h4>Bergabung dengan Login ITB</h4>
+<p>Aplikasi berbasis web di ITB dapat menggunakan Login ITB sebagai sistem credentialnya.
+Untuk bergabung, silahkan kirimkan surat permohonan menggunakan Login ITB ke Direktorat Sistem dan Teknologi Informasi yang berisi data berikut:
+<ol>
+<li>URL aplikasi (harus berbasiskan https)</li>
+<li>Deskripsi aplikasi</li>
+<li>Nama dan alamat email ITB dari penanggung jawab aplikasi (staf/dosen).</li>
+</ol>
+</li>-->
+        <p></p>
+        <li>
+          <h4>Lupa Password</h4>
+          <p>Jika lupa password, <a href="https://nic.itb.ac.id/manajemen-akun/reset-password" target="_blank">silahkan klik link berikut</a>.</p>
+        </li>
+        <li>
+          <h4>Peringatan Kemanan</h4>
+          <p>Demi keamanan, mohon selalu logout dari login.itb.ac.id dan mematikan browser jika telah selesai mengakses layanan internet ITB.</p>
+          <!--<p>Untuk logout dari login.itb.ac.id, <a href="https://login.itb.ac.id/cas/logout" target="_blank">silahkan klik link berikut</a>.</p>-->
+        </li>
+      </ol>
+    </div>
+    <footer>
+      <div id="copyright" class="col-lg-12"> © Copyright 2016 Institut Teknologi Bandung<p></p>
+      </div>
+    </footer>
+  </div> <!-- END #container -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <!--<script type="text/javascript" src="https://github.com/cowboy/javascript-debug/raw/master/ba-debug.min.js"></script>-->
+  <script type="text/javascript" src="../smart/js/ba-debug.min.js"></script>
+  <script type="text/javascript" src="../smart/js/cas.js"></script>
+</body>
+
+</html>
