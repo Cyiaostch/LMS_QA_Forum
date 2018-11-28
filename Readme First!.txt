@@ -19,3 +19,7 @@ Reset Database:
 Deployment(Localhost):
 - "cd LMS_QA_Forum"
 - "python main.py"
+
+	Homepage : "127.0.0.1:5000/"
+	Username : "deryan" 
+	Password : "deryan"
