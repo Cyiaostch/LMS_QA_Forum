@@ -58,7 +58,7 @@ cursor.execute('''CREATE TABLE ThreadPertanyaan (
   PRIMARY KEY (ID)
 );''')
 
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB001","{}","Berapakah nilai 1 + 1?","Materi")'''.format(hash("Berapakah nilai 1 + 1?")))
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB001","{}","Berapakah 1 + 1?","Materi")'''.format(hash("Berapakah 1 + 1?")))
 cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB002","{}","Apakah batu bisa terbang?","Materi")'''.format(hash("Apakah batu bisa terbang?")))
 cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB003","{}","Mengapa fanta warnanya merah?","Materi")'''.format(hash("Mengapa fanta warnanya merah?")))
 connection.commit()
