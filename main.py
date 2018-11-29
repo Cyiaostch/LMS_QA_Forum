@@ -28,16 +28,16 @@ def handleLogin():
 	
 	
 	cursor.execute("""SELECT * FROM Mahasiswa WHERE Username='{}' AND Password='{}'""".format(username,password))
-	result=cursor.fetchall()
+	result_2=cursor.fetchall()
 	
-	if(len(result)==0):
+	if(len(result_2)==0):
 		return render_template("home.html")
 	else:		
 		cursor.execute("""SELECT MataKuliah.Kode, MataKuliah.Nama FROM MataKuliah Inner Join (SELECT * FROM Mahasiswa INNER JOIN Mengambil ON Mahasiswa.Username = Mengambil.Username_Mahasiswa WHERE Mahasiswa.Username='{}') as Temp on MataKuliah.Kode=Temp.Kode_MataKuliah;""".format(username))
 		result=cursor.fetchall()
 		
 		session['user']=username
-		return render_template("dashboard.html",data=result)
+		return render_template("dashboard.html",data=result,nama=result_2[0])
 
 #Login Dosen
 @app.route('/dosen/')

@@ -14,7 +14,7 @@
     <div class="container"> <a class="navbar-brand py-0 px-0 pr-0 pt-0 pb-0 mr-auto" href="#">
         <i class="fa d-inline fa-code-fork"></i>
         <b> STUDENTS FORUM</b>
-      </a> </div><span class="navbar-text text-left" style="	transform:  translateX(-900px) ;">#idUserMahasiswa</span>
+      </a> </div><span class="navbar-text text-left" style="	transform:  translateX(-900px) ;">{{nama[2]}} - {{nama[3]}}</span>
   </nav>
   <div class="container">
     <div class="row">
@@ -50,7 +50,7 @@
 				<a href={{'http://127.0.0.1:5000/forum/?Kode_MataKuliah='+"%20".join(item[0].split(" "))}} class="list-group-item list-group-item-action flex-column align-items-start">
 					<div class="card-body" style="	box-shadow: 0px 0px 4px  #ccffff;">
 						<h4>{{item[0]}} - {{item[1]}}</h4>
-						<p>check recent post here</p>
+						<p>Check Recent Post Here</p>
 					</div>
 				</a>
             {% endfor %}

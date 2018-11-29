@@ -49,18 +49,6 @@ print("Table Mengajar")
 pprint.pprint(data)
 print()
 
-cursor.execute("""SELECT ThreadPertanyaan.Kode_MataKuliah,ThreadPertanyaan.ID,ThreadPertanyaan.Pertanyaan,ThreadPertanyaan.Tag FROM ThreadPertanyaan INNER JOIN MataKuliah ON ThreadPertanyaan.Kode_MataKuliah=MataKuliah.Kode WHERE ThreadPertanyaan.Kode_MataKuliah='{}'""".format("TPB001"))
-data=cursor.fetchall()
-print("Test")
-pprint.pprint(data[0])
-print()
-
-cursor.execute("""SELECT Pertanyaan,ID FROM ThreadPertanyaan WHERE ID='{}'""".format("P001"))
-data=cursor.fetchall()
-print("Test")
-pprint.pprint(data[0])
-print()
-
 #commit command
 connection.commit()
 
