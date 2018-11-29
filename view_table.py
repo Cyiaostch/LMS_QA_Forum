@@ -55,6 +55,12 @@ print("Test")
 pprint.pprint(data[0])
 print()
 
+cursor.execute("""SELECT Pertanyaan,ID FROM ThreadPertanyaan WHERE ID='{}'""".format("P001"))
+data=cursor.fetchall()
+print("Test")
+pprint.pprint(data[0])
+print()
+
 #commit command
 connection.commit()
 

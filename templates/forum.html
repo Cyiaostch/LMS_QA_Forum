@@ -86,14 +86,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" action={{"/handleInputPertanyaan/"+matakuliah[0]+"/"}} method="get">
             <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Question</label>
               <div class="col-10">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Type your question here"> </div>
+                <input name="pertanyaan" type="text" class="form-control" id="inputmailh" placeholder="Type your question here"> </div>
             </div>
             <div class="form-group row"> <label for="inputpasswordh" class="col-2 col-form-label">Tag</label>
               <div class="col-10">
-                <input type="text" class="form-control" id="inputpasswordh" placeholder="Type your question tag here"> </div>
+                <input name="tag" type="text" class="form-control" id="inputpasswordh" placeholder="Type your question tag here"> </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

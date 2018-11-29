@@ -58,9 +58,9 @@ cursor.execute('''CREATE TABLE ThreadPertanyaan (
   PRIMARY KEY (ID)
 );''')
 
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB001","P001","Berapakah nilai 1 + 1?","Materi")''')
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB002","P002","Apakah batu bisa terbang?","Materi")''')
-cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB003","P003","Mengapa fanta warnanya merah?","Materi")''')
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB001","{}","Berapakah nilai 1 + 1?","Materi")'''.format(hash("Berapakah nilai 1 + 1?")))
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB002","{}","Apakah batu bisa terbang?","Materi")'''.format(hash("Apakah batu bisa terbang?")))
+cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("TPB003","{}","Mengapa fanta warnanya merah?","Materi")'''.format(hash("Mengapa fanta warnanya merah?")))
 connection.commit()
 
 #create Table Jawaban
@@ -72,9 +72,9 @@ cursor.execute('''CREATE TABLE Jawaban (
   PRIMARY KEY (ID)
 );''')
 
-cursor.execute('''INSERT INTO Jawaban VALUES ("P001","J001","Saya rasa jawabannya adalah 3","0")''')
-cursor.execute('''INSERT INTO Jawaban VALUES ("P002","J002","Saya rasa batu bisa terbang. Tapi tidak tahu juga ya, kenapa ga tanya aja ke batunya?","0")''')
-cursor.execute('''INSERT INTO Jawaban VALUES ("P003","J003","Karena fanta diberi zat pewarna merah","0")''')
+cursor.execute('''INSERT INTO Jawaban VALUES ("{}","{}","Saya rasa jawabannya adalah 3","0")'''.format(hash("Berapakah nilai 1 + 1?"),hash("Saya rasa jawabannya adalah 3")))
+cursor.execute('''INSERT INTO Jawaban VALUES ("{}","{}","Saya rasa batu bisa terbang. Tapi tidak tahu juga ya, kenapa ga tanya aja ke batunya?","0")'''.format(hash("Apakah batu bisa terbang?"),hash("Saya rasa batu bisa terbang. Tapi tidak tahu juga ya, kenapa ga tanya aja ke batunya?")))
+cursor.execute('''INSERT INTO Jawaban VALUES ("{}","{}","Karena fanta diberi zat pewarna merah","0")'''.format(hash("Mengapa fanta warnanya merah?"),hash("Karena fanta diberi zat pewarna merah")))
 connection.commit()
 
 #create Table Mengambil

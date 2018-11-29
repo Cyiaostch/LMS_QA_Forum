@@ -22,16 +22,18 @@
       <div class="row">
         <div class="col-md-12">
           <h1 class="text-center" style="">{{pertanyaan}}</h1>
-          <div class="card">
+          
            
 			{% for item in data %}
+			<div class="card">
 				<div class="card-body">
 					<h4>{{item[2]}}</h4>
 					<a class="btn btn-primary mr-2" href="#"><i class="fa fa-thumbs-up"></i></a><a class="btn btn-primary mr-2" href="#"><i class="fa fa-thumbs-o-down"></i></a><a class="btn btn-primary" href="#"><i class="fa fa-check"></i></a>
 				</div>
+			</div>
             {% endfor %}
           
-          </div>
+
         </div>
       </div>
     </div>
@@ -40,10 +42,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" action={{"/handleInputJawaban/"+ID_ThreadPertanyaan+"/"}} method="get">
             <div class="form-group row"> <label for="inputmailh" class="col-2 col-form-label">Jawaban</label>
               <div class="col-10">
-                <input type="text" class="form-control" id="input question" placeholder="Type your answer here"> </div>
+                <input name="jawaban" type="text" class="form-control" id="input question" placeholder="Type your answer here"> </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

@@ -75,6 +75,24 @@ def forum():
 	
 	return render_template("forum.html", data=result, matakuliah=result_2[0])
 
+@app.route('/handleInputPertanyaan/<Kode_MataKuliah>/')
+def handleInputPertanyaan(Kode_MataKuliah):
+	Kode_MataKuliah =  Kode_MataKuliah
+	pertanyaan = request.args.get('pertanyaan')
+	tag = request.args.get('tag')
+	
+	cursor.execute('''INSERT INTO ThreadPertanyaan VALUES ("{}","{}","{}","{}")'''.format(Kode_MataKuliah,hash(pertanyaan),pertanyaan,tag))
+	connection.commit()
+	
+	cursor.execute("""SELECT ThreadPertanyaan.Kode_MataKuliah,ThreadPertanyaan.ID,ThreadPertanyaan.Pertanyaan,ThreadPertanyaan.Tag FROM ThreadPertanyaan INNER JOIN MataKuliah ON ThreadPertanyaan.Kode_MataKuliah=MataKuliah.Kode WHERE ThreadPertanyaan.Kode_MataKuliah='{}'""".format(Kode_MataKuliah))
+	result=cursor.fetchall()
+	
+	cursor.execute("""SELECT * From MataKuliah WHERE Kode='{}'""".format(Kode_MataKuliah))
+	result_2=cursor.fetchall()
+	
+	return render_template("forum.html", data=result, matakuliah=result_2[0])
+
+
 #Thread
 @app.route('/thread/')
 def thread():
@@ -83,10 +101,26 @@ def thread():
 	cursor.execute("""SELECT * FROM Jawaban WHERE ID_ThreadPertanyaan='{}'""".format(ID_ThreadPertanyaan))
 	result=cursor.fetchall()
 	
-	cursor.execute("""SELECT Pertanyaan FROM ThreadPertanyaan WHERE ID='{}'""".format(ID_ThreadPertanyaan))
+	cursor.execute("""SELECT Pertanyaan,ID FROM ThreadPertanyaan WHERE ID='{}'""".format(ID_ThreadPertanyaan))
 	result_2=cursor.fetchall()
 	
-	return render_template("pertanyaan.html", data=result, pertanyaan=result_2[0][0])
+	return render_template("pertanyaan.html", data=result, pertanyaan=result_2[0][0], ID_ThreadPertanyaan=result_2[0][1])
+
+@app.route('/handleInputJawaban/<ID>/')
+def handleInputJawaban(ID):
+	ID_ThreadPertanyaan = ID
+	jawaban = request.args.get('jawaban')
+	
+	cursor.execute('''INSERT INTO Jawaban VALUES ("{}","{}","{}","{}")'''.format(ID_ThreadPertanyaan,hash(jawaban),jawaban,"0"))
+	connection.commit()
+	
+	cursor.execute("""SELECT * FROM Jawaban WHERE ID_ThreadPertanyaan='{}'""".format(ID_ThreadPertanyaan))
+	result=cursor.fetchall()
+	
+	cursor.execute("""SELECT Pertanyaan,ID FROM ThreadPertanyaan WHERE ID='{}'""".format(ID_ThreadPertanyaan))
+	result_2=cursor.fetchall()
+	
+	return render_template("pertanyaan.html", data=result, pertanyaan=result_2[0][0], ID_ThreadPertanyaan=result_2[0][1])
 
 #-----------------------------------------------------------------------
 
